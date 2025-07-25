@@ -1,0 +1,103 @@
+.container {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e1bee7 0%, #ce93d8 100%);
+}
+
+.qr-card {
+  padding: 32px 40px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(106, 27, 154, 0.18);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  max-height: 90vh;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #6a1b9a;
+  letter-spacing: 1px;
+}
+
+button[mat-raised-button], .button[mat-raised-button] {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 15px;
+  color: #6a1b9a !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.50);
+  border: none;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+
+  &:hover, &:focus {
+    transform: scale(1.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.50);
+    color: #6a1b9a !important;
+  }
+}
+
+.qrCode {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  min-height: 300px;
+
+  img {
+    border-radius: 16px;
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 4px 24px rgba(106, 27, 154, 0.15);
+    max-width: 300px;
+    max-height: 300px;
+  }
+  border: 4px solid #6a1b9a;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(106, 27, 154, 0.15);
+  width: 300px;
+  height: 300px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .qr-card {
+    width: 95vw;
+    padding: 16px 4vw;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .qrCode {
+    width: 70vw;
+    height: 70vw;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 95vw;
+    max-height: 70vw;
+  }
+  button[mat-raised-button], .button[mat-raised-button] {
+    font-size: 1rem;
+    padding: 12px 0;
+    width: 100%;
+  }
+}

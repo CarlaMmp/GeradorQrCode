@@ -1,0 +1,24 @@
+<div class="container">
+  <mat-card class="qr-card">
+    <h1 class="title">Gerador de QR Code</h1>
+
+    <div class="qrCode">
+      <ng-container *ngIf="loading; else qrImage">
+        <mat-progress-spinner
+          color="primary"
+          mode="indeterminate"
+          diameter="64">
+        </mat-progress-spinner>
+      </ng-container>
+      <ng-template #qrImage>
+        <img *ngIf="qrCodeImage" [src]="qrCodeImage" />
+      </ng-template>
+    </div>
+
+    <button class="button" mat-raised-button color="primary" (click)="gerarQrCode()" [disabled]="loading">
+      <mat-icon *ngIf="!loading">qr_code</mat-icon>
+      <mat-icon *ngIf="loading" class="spin">autorenew</mat-icon>
+      Gerar QR Code
+    </button>
+  </mat-card>
+</div>
